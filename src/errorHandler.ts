@@ -12,14 +12,14 @@ const REQUEST_TIMEOUT_PREFIX = ['timeout of ']
  * @returns
  */
 function checkErrorType(msg: string, type: 'network' | 'timeout') {
-    msg = msg.toLowerCase()
-    const prefixs = type === 'network' ? NETWORK_ERRORS_PREFIX : REQUEST_TIMEOUT_PREFIX
-    for (const p of prefixs) {
-        if (msg.startsWith(p)) {
-            return true
-        }
+  msg = msg.toLowerCase()
+  const prefixs = type === 'network' ? NETWORK_ERRORS_PREFIX : REQUEST_TIMEOUT_PREFIX
+  for (const p of prefixs) {
+    if (msg.startsWith(p)) {
+      return true
     }
-    return false
+  }
+  return false
 }
 
 /**
@@ -29,27 +29,27 @@ function checkErrorType(msg: string, type: 'network' | 'timeout') {
  * @enum {number}
  */
 export enum ERROR_TYPE {
-    COMMON_NETWORK_ERROR = 'network error',
-    NETWORK_OFFLINE = 'you are offline',
-    REQUEST_TIMEOUT = 'request timeout'
+  COMMON_NETWORK_ERROR = 'network error',
+  NETWORK_OFFLINE = 'you are offline',
+  REQUEST_TIMEOUT = 'request timeout'
 }
 
 function toastError(e: any) {
-    const errMsg: string = get(e, 'reason.response.data.message') || get(e, 'reason.message')
-    if (errMsg && typeof errMsg === 'string') {
-        if (checkErrorType(errMsg, 'network')) {
-            return message.error(ERROR_TYPE.COMMON_NETWORK_ERROR)
-        }
-        if (checkErrorType(errMsg, 'timeout')) {
-            return message.error(ERROR_TYPE.REQUEST_TIMEOUT)
-        }
-        message.error(errMsg)
+  const errMsg: string = get(e, 'reason.response.data.message') || get(e, 'reason.message')
+  if (errMsg && typeof errMsg === 'string') {
+    if (checkErrorType(errMsg, 'network')) {
+      return message.error(ERROR_TYPE.COMMON_NETWORK_ERROR)
     }
+    if (checkErrorType(errMsg, 'timeout')) {
+      return message.error(ERROR_TYPE.REQUEST_TIMEOUT)
+    }
+    message.error(errMsg)
+  }
 }
 
 function handleError(e: any) {
-    console.error(e)
-    toastError(e)
+  console.error(e)
+  toastError(e)
 }
 
 /**
@@ -58,5 +58,5 @@ function handleError(e: any) {
  * @export
  */
 export default function catchUnhandledRejection() {
-    window.addEventListener('unhandledrejection', handleError)
+  window.addEventListener('unhandledrejection', handleError)
 }

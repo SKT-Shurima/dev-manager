@@ -1,0 +1,24 @@
+.wrapper {
+  overflow: hidden;
+  padding: 0 10px 0 20px;
+  position: relative;
+  user-select: none;
+}
+
+.drawing {
+  height: 100%;
+  position: absolute;
+  right: 420px;
+  width: 200px;
+  z-index: 100;
+}
+
+.originTable {
+  float: left;
+  width: 420px;
+}
+
+.targetTable {
+  float: right;
+  width: 420px;
+}

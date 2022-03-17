@@ -1,15 +1,15 @@
 declare interface PlainObject {
-    [propName: string]: unknown
+  [propName: string]: unknown
 }
 
 declare interface BooleanObject {
-    [propName: string]: boolean
+  [propName: string]: boolean
 }
 
 declare interface StringObject {
-    [propName: string]: string
+  [propName: string]: string
 }
 
 declare interface NumberObject {
-    [propName: string]: number
+  [propName: string]: number
 }

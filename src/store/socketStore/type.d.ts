@@ -9,8 +9,8 @@ export import SocketType = SOCKET_TYPE
 export import DataFormatType = DATA_FORMAT_TYPE
 
 export interface Message {
-    event: string
-    time?: number
-    from: 'browser' | 'server' | 'console'
-    data: any
+  event: string
+  time?: number
+  from: 'browser' | 'server' | 'console'
+  data: any
 }

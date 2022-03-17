@@ -1,16 +1,29 @@
 .appWrapper {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    margin: 0 auto;
-    min-height: 100%;
-    overflow: auto;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0 auto;
+  min-height: 100%;
+  overflow: auto;
+  width: 100%;
+}
+
+.headerWrapper {
+  display: flex;
+}
+.logo {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  width: 190px;
+}
+.tips {
+  color: aliceblue;
 }
 
 .intlSelect:global.ant-select {
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    width: 100px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 100px;
 }
