@@ -1,0 +1,144 @@
+.treeWrapper {
+  margin-bottom: 10px;
+  :global {
+    .sup-tree.sup-tree-block-node li .sup-tree-node-content-wrapper {
+      width: 95%;
+      height: auto;
+    }
+    .sup-tree li .sup-tree-node-content-wrapper.sup-tree-node-selected {
+      background-color: transparent;
+    }
+  }
+}
+
+.addNode {
+  :global {
+    .sup-tree-node-content-wrapper {
+      &:hover {
+        background: transparent !important;
+      }
+    }
+  }
+}
+
+.addWrapper {
+  :global {
+    & button[type='button'].sup-btn {
+      height: 24px;
+      margin-right: 10px;
+    }
+  }
+}
+
+.addList {
+  padding: 0;
+  border-top: 1px solid #ccc;
+}
+
+.arrKey {
+  display: inline-block;
+  width: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: @gray-color;
+}
+
+.arrContent {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+}
+
+.edit {
+  display: flex;
+  :global {
+    .sup-row.sup-form-item {
+      margin-bottom: 0;
+      margin-right: 10px;
+    }
+    .sup-form-item-control-wrapper .sup-select .sup-select-selection--single {
+      width: 88px !important;
+      height: 24px;
+    }
+    .sup-form-item-control-wrapper {
+      .sup-form-item-control {
+        line-height: 24px;
+        .sup-input,
+        .sup-time-picker-input {
+          height: 24px;
+        }
+        .sup-select {
+          .sup-select-selection--single .sup-select-selection__rendered {
+            height: 24px;
+            line-height: 24px;
+            min-width: 30px;
+            .sup-select-selection-selected-value {
+              height: 24px;
+              line-height: 24px;
+            }
+          }
+        }
+      }
+    }
+    .has-error .sup-form-explain {
+      display: none;
+    }
+  }
+}
+
+.icon {
+  visibility: hidden;
+  margin-bottom: -4px;
+  margin-left: 4px;
+}
+
+.btnIcon {
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: @primary-color;
+}
+.keyWrapper {
+  display: flex;
+  color: @gray-color;
+  &:hover {
+    .icon {
+      visibility: visible;
+    }
+  }
+}
+.key {
+  margin-right: 10px;
+}
+.boolean {
+  color: @primary-color;
+}
+.number {
+  color: @error-color;
+}
+.string {
+  color: @success-color;
+}
+.tips {
+  color: @warning-color;
+}
+
+.empty {
+  text-align: center;
+}
+.emptyImage {
+  height: 80px;
+  margin-top: 32px;
+  margin-bottom: 10px;
+  background: url('../../../../../assets/images/common/no-data.svg') no-repeat
+    50% 0;
+}
+.varSelect {
+  :global {
+    .sup-select-selection {
+      width: 100px !important;
+      height: 24px !important;
+    }
+  }
+}
